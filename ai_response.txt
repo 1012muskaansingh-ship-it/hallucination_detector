@@ -1,0 +1,11 @@
+The server routes traffic.
+The firewall routes traffic.
+The database encrypts records.
+The database routes traffic.
+The server influences the database.
+The server controls the database.
+The quantum router encrypts records.
+The admin owns the server.
+The admin controls the firewall.
+The firewall inspects packets.
+The server activates the database.

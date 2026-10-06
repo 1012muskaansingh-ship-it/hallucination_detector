@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Deterministic Hallucination Verification Report</title>
+<style>
+:root{--bg:#08111f;--panel:#101c2e;--panel2:#15243a;--line:#243550;--text:#edf4ff;--muted:#91a4bd;--accent:#7c9cff;--green:#31d69a;--red:#ff6678;--amber:#ffca5c;--cyan:#54d7ff}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 80% -10%,#20386b 0,transparent 38%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55}
+.wrap{max-width:1180px;margin:auto;padding:36px 22px 70px} header{padding:34px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,rgba(124,156,255,.20),rgba(84,215,255,.06));box-shadow:0 24px 70px rgba(0,0,0,.25)}
+.kicker,.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:800;color:var(--cyan)} h1{font-size:38px;line-height:1.1;margin:10px 0 12px} h2{font-size:22px;margin:0 0 14px} h3{font-size:17px;margin:4px 0 0} p{color:var(--muted)}
+.sub{max-width:800px;font-size:15px} .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0 28px} .stat,.panel,.result-card{background:rgba(16,28,46,.88);border:1px solid var(--line);border-radius:18px}
+.stat{padding:20px} .stat b{display:block;font-size:30px} .stat span{color:var(--muted);font-size:12px} .panel{padding:24px;margin:18px 0} .results{display:grid;gap:14px}
+.result-card{padding:20px;border-left:4px solid var(--accent)} .result-card.verified{border-left-color:var(--green)} .result-card.contradicted{border-left-color:var(--red)} .result-card.unsupported{border-left-color:var(--amber)} .result-card.unresolved{border-left-color:var(--cyan)}
+.result-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start} .badge{padding:7px 11px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.08em;background:var(--accent)} .verified .badge{background:var(--green);color:#062419} .contradicted .badge{background:var(--red)} .unsupported .badge{background:var(--amber);color:#342500} .unresolved .badge{background:var(--cyan);color:#03212a}
+.triplet{margin-top:16px;padding:13px 15px;border-radius:12px;background:var(--panel2);font-family:ui-monospace,SFMono-Regular,monospace;font-size:13px} .triplet b{color:var(--cyan)} .reason{margin:14px 0 10px} .evidence{display:grid;grid-template-columns:repeat(4,1fr);gap:10px} .evidence div{background:#0b1728;border:1px solid var(--line);padding:10px;border-radius:10px;min-height:62px} .evidence span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em} .evidence strong{display:block;margin-top:4px;font-size:12px;word-break:break-word}
+table{width:100%;border-collapse:collapse;font-size:12px} th,td{border:1px solid var(--line);padding:8px;text-align:center} th{background:var(--panel2);color:var(--muted)} td.one{background:rgba(49,214,154,.20);color:var(--green);font-weight:800} td.zero{color:#50647e} .math{font-family:Georgia,serif;font-size:18px;color:#dce8ff} .source{white-space:pre-wrap;background:#0a1525;border:1px solid var(--line);padding:18px;border-radius:12px;color:#bdcbe0;font-family:ui-monospace,monospace;font-size:12px}
+footer{margin-top:30px;color:#647894;font-size:11px;text-align:center} @media(max-width:800px){.grid,.evidence{grid-template-columns:repeat(2,1fr)}h1{font-size:30px}} @media(max-width:520px){.grid,.evidence{grid-template-columns:1fr}}
+</style></head>
+<body><main class='wrap'>
+<header><div class='kicker'>DISCRETE MATHEMATICS × NEURO-SYMBOLIC VERIFICATION</div><h1>AI Hallucination Verification Report</h1><p class='sub'>This run treats the text in <b>ai_response.txt</b> as simulated AI output. Each generated claim is converted into a symbolic triple and checked against the trusted source graph using deterministic relations, matrices, contradictions, and explicit inference rules.</p><p>Generated 06 Oct 2026, 14:12 · Ground truth: ground_truth.txt · AI response: ai_response.txt</p></header>
+<section class='grid'>
+<div class='stat'><b>7</b><span>ENTITIES</span></div><div class='stat'><b>8</b><span>GROUND-TRUTH EDGES</span></div><div class='stat'><b>11</b><span>AI CLAIMS TESTED</span></div><div class='stat'><b>5</b><span>HALLUCINATION CANDIDATES</span></div>
+</section>
+<section class='panel'><h2>AI response being tested</h2><div class='source'>The server routes traffic.
+The firewall routes traffic.
+The database encrypts records.
+The database routes traffic.
+The server influences the database.
+The server controls the database.
+The quantum router encrypts records.
+The admin owns the server.
+The admin controls the firewall.
+The firewall inspects packets.
+The server activates the database.
+</div></section>
+<section class='panel'><h2>Verification overview</h2><div class='grid' style='margin-bottom:0'><div class='stat'><b>1</b><span>CONTRADICTED</span></div><div class='stat'><b>4</b><span>UNSUPPORTED</span></div><div class='stat'><b>1</b><span>UNRESOLVED</span></div><div class='stat'><b>100%</b><span>DETERMINISTIC RUN</span></div></div></section>
+<section class='panel'><h2>Claims and proof traces</h2><p>The verifier never treats an arbitrary graph path as proof. A claim is verified only by an exact predicate edge or an explicitly declared logical rule.</p><div class='results'>
+    <article class='result-card verified'>
+      <div class='result-top'>
+        <div>
+          <div class='eyebrow'>CLAIM 01</div>
+          <h3>The server routes traffic.</h3>
+        </div>
+        <span class='badge'>VERIFIED</span>
+      </div>
+      <div class='triplet'>
+        <span>server</span>
+        <b>— ROUTES →</b>
+        <span>traffic</span>
+      </div>
+      <p class='reason'>Exact predicate edge exists in the ground-truth graph.</p>
+      <div class='evidence'>
+        <div><span>Proof type</span><strong>direct_edge</strong></div>
+        <div><span>Path</span><strong>server → traffic</strong></div>
+        <div><span>Rule</span><strong>—</strong></div>
+        <div><span>Missing entities</span><strong>—</strong></div>
+      </div>
+    </article>
+    
+    <article class='result-card unsupported'>
+      <div class='result-top'>
+        <div>
+          <div class='eyebrow'>CLAIM 02</div>
+          <h3>The firewall routes traffic.</h3>
+        </div>
+        <span class='badge'>UNSUPPORTED</span>
+      </div>
+      <div class='triplet'>
+        <span>firewall</span>
+        <b>— ROUTES →</b>
+        <span>traffic</span>
+      </div>
+      <p class='reason'>Both entities exist, but the claimed predicate is not present or derivable under the declared rules.</p>
+      <div class='evidence'>
+        <div><span>Proof type</span><strong>no_proof</strong></div>
+        <div><span>Path</span><strong>—</strong></div>
+        <div><span>Rule</span><strong>—</strong></div>
+        <div><span>Missing entities</span><strong>—</strong></div>
+      </div>
+    </article>
+    
+    <article class='result-card verified'>
+      <div class='result-top'>
+        <div>
+          <div class='eyebrow'>CLAIM 03</div>
+          <h3>The database encrypts records.</h3>
+        </div>
+        <span class='badge'>VERIFIED</span>
+      </div>
+      <div class='triplet'>
+        <span>database</span>
+        <b>— ENCRYPTS →</b>
+        <span>records</span>
+      </div>
+      <p class='reason'>Exact predicate edge exists in the ground-truth graph.</p>
+      <div class='evidence'>
+        <div><span>Proof type</span><strong>direct_edge</strong></div>
+        <div><span>Path</span><strong>database → records</strong></div>
+        <div><span>Rule</span><strong>—</strong></div>
+        <div><span>Missing entities</span><strong>—</strong></div>
+      </div>
+    </article>
+    
+    <article class='result-card contradicted'>
+      <div class='result-top'>
+        <div>
+          <div class='eyebrow'>CLAIM 04</div>
+          <h3>The database routes traffic.</h3>
+        </div>
+        <span class='badge'>CONTRADICTED</span>
+      </div>
+      <div class='triplet'>
+        <span>database</span>
+        <b>— ROUTES →</b>
+        <span>traffic</span>
+      </div>
+      <p class='reason'>The source contains an explicit contradictory relation.</p>
+      <div class='evidence'>
+        <div><span>Proof type</span><strong>explicit_contradiction</strong></div>
+        <div><span>Path</span><strong>—</strong></div>
+        <div><span>Rule</span><strong>—</strong></div>
+        <div><span>Missing entities</span><strong>—</strong></div>
+      </div>
+    </article>
+    
+    <article class='result-card verified'>
+      <div class='result-top'>
+        <div>
+          <div class='eyebrow'>CLAIM 05</div>
+          <h3>The server influences the database.</h3>
+        </div>
+        <span class='badge'>VERIFIED</span>
+      </div>
+      <div class='triplet'>
+        <span>server</span>
+        <b>— INFLUENCES →</b>
+        <span>database</span>
+      </div>
+      <p class='reason'>Claim is derived by explicit rule CONTROLS AND ACTIVATES -&gt; INFLUENCES.</p>
+      <div class='evidence'>
+        <div><span>Proof type</span><strong>rule_derivation</strong></div>
+        <div><span>Path</span><strong>server → firewall → database</strong></div>
+        <div><span>Rule</span><strong>CONTROLS ∧ ACTIVATES → INFLUENCES</strong></div>
+        <div><span>Missing entities</span><strong>—</strong></div>
+      </div>
+    </article>
+    
+    <article class='result-card unsupported'>
+      <div class='result-top'>
+        <div>
+          <div class='eyebrow'>CLAIM 06</div>
+          <h3>The server controls the database.</h3>
+        </div>
+        <span class='badge'>UNSUPPORTED</span>
+      </div>
+      <div class='triplet'>
+        <span>server</span>
+        <b>— CONTROLS →</b>
+        <span>database</span>
+      </div>
+      <p class='reason'>Both entities exist, but the claimed predicate is not present or derivable under the declared rules.</p>
+      <div class='evidence'>
+        <div><span>Proof type</span><strong>no_proof</strong></div>
+        <div><span>Path</span><strong>—</strong></div>
+        <div><span>Rule</span><strong>—</strong></div>
+        <div><span>Missing entities</span><strong>—</strong></div>
+      </div>
+    </article>
+    
+    <article class='result-card unresolved'>
+      <div class='result-top'>
+        <div>
+          <div class='eyebrow'>CLAIM 07</div>
+          <h3>The quantum router encrypts records.</h3>
+        </div>
+        <span class='badge'>UNRESOLVED</span>
+      </div>
+      <div class='triplet'>
+        <span>quantum router</span>
+        <b>— ENCRYPTS →</b>
+        <span>records</span>
+      </div>
+      <p class='reason'>Entity not found in the source knowledge graph.</p>
+      <div class='evidence'>
+        <div><span>Proof type</span><strong>entity_resolution</strong></div>
+        <div><span>Path</span><strong>—</strong></div>
+        <div><span>Rule</span><strong>—</strong></div>
+        <div><span>Missing entities</span><strong>quantum router</strong></div>
+      </div>
+    </article>
+    
+    <article class='result-card verified'>
+      <div class='result-top'>
+        <div>
+          <div class='eyebrow'>CLAIM 08</div>
+          <h3>The admin owns the server.</h3>
+        </div>
+        <span class='badge'>VERIFIED</span>
+      </div>
+      <div class='triplet'>
+        <span>admin</span>
+        <b>— OWNS →</b>
+        <span>server</span>
+      </div>
+      <p class='reason'>Exact predicate edge exists in the ground-truth graph.</p>
+      <div class='evidence'>
+        <div><span>Proof type</span><strong>direct_edge</strong></div>
+        <div><span>Path</span><strong>admin → server</strong></div>
+        <div><span>Rule</span><strong>—</strong></div>
+        <div><span>Missing entities</span><strong>—</strong></div>
+      </div>
+    </article>
+    
+    <article class='result-card unsupported'>
+      <div class='result-top'>
+        <div>
+          <div class='eyebrow'>CLAIM 09</div>
+          <h3>The admin controls the firewall.</h3>
+        </div>
+        <span class='badge'>UNSUPPORTED</span>
+      </div>
+      <div class='triplet'>
+        <span>admin</span>
+        <b>— CONTROLS →</b>
+        <span>firewall</span>
+      </div>
+      <p class='reason'>Both entities exist, but the claimed predicate is not present or derivable under the declared rules.</p>
+      <div class='evidence'>
+        <div><span>Proof type</span><strong>no_proof</strong></div>
+        <div><span>Path</span><strong>—</strong></div>
+        <div><span>Rule</span><strong>—</strong></div>
+        <div><span>Missing entities</span><strong>—</strong></div>
+      </div>
+    </article>
+    
+    <article class='result-card verified'>
+      <div class='result-top'>
+        <div>
+          <div class='eyebrow'>CLAIM 10</div>
+          <h3>The firewall inspects packets.</h3>
+        </div>
+        <span class='badge'>VERIFIED</span>
+      </div>
+      <div class='triplet'>
+        <span>firewall</span>
+        <b>— INSPECTS →</b>
+        <span>packets</span>
+      </div>
+      <p class='reason'>Exact predicate edge exists in the ground-truth graph.</p>
+      <div class='evidence'>
+        <div><span>Proof type</span><strong>direct_edge</strong></div>
+        <div><span>Path</span><strong>firewall → packets</strong></div>
+        <div><span>Rule</span><strong>—</strong></div>
+        <div><span>Missing entities</span><strong>—</strong></div>
+      </div>
+    </article>
+    
+    <article class='result-card unsupported'>
+      <div class='result-top'>
+        <div>
+          <div class='eyebrow'>CLAIM 11</div>
+          <h3>The server activates the database.</h3>
+        </div>
+        <span class='badge'>UNSUPPORTED</span>
+      </div>
+      <div class='triplet'>
+        <span>server</span>
+        <b>— ACTIVATES →</b>
+        <span>database</span>
+      </div>
+      <p class='reason'>Both entities exist, but the claimed predicate is not present or derivable under the declared rules.</p>
+      <div class='evidence'>
+        <div><span>Proof type</span><strong>no_proof</strong></div>
+        <div><span>Path</span><strong>—</strong></div>
+        <div><span>Rule</span><strong>—</strong></div>
+        <div><span>Missing entities</span><strong>—</strong></div>
+      </div>
+    </article>
+    </div></section>
+<section class='panel'><h2>Discrete mathematics evidence</h2><p class='math'>For a predicate p, A<sub>p</sub>[i,j] = 1 iff the labeled edge (v<sub>i</sub>, p, v<sub>j</sub>) exists.</p><h3>ROUTES adjacency matrix A<sub>ROUTES</sub></h3><table class='matrix'><thead><tr><th></th><th>server</th><th>traffic</th><th>firewall</th><th>packets</th><th>database</th><th>records</th><th>admin</th></tr></thead><tbody><tr><th>server</th><td class='zero'>0</td><td class='one'>1</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>traffic</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>firewall</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>packets</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>database</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>records</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>admin</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr></tbody></table>
+<h3 style='margin-top:24px'>Rule composition</h3><p class='math'>A<sub>CONTROLS</sub> ⊙ A<sub>ACTIVATES</sub> = A<sub>INFLUENCES</sub></p><table class='matrix'><thead><tr><th></th><th>server</th><th>traffic</th><th>firewall</th><th>packets</th><th>database</th><th>records</th><th>admin</th></tr></thead><tbody><tr><th>server</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='one'>1</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>traffic</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>firewall</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>packets</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>database</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>records</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr><tr><th>admin</th><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td><td class='zero'>0</td></tr></tbody></table>
+</section>
+<section class='panel'><h2>Ground-truth source</h2><div class='source'>The server routes traffic.
+The firewall inspects packets.
+The database stores records.
+The database encrypts records.
+The server controls the firewall.
+The firewall activates the database.
+The database does not route traffic.
+The admin owns the server.
+</div></section>
+<footer>Prototype research artifact · Deterministic verification is guaranteed relative to the extracted knowledge graph and declared rule set; it does not by itself guarantee real-world truth.</footer>
+</main></body></html>

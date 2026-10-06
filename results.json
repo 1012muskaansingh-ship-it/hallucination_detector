@@ -1,0 +1,720 @@
+{
+  "generated_at": "2026-10-06T14:12:36",
+  "entities": {
+    "1": "server",
+    "2": "traffic",
+    "3": "firewall",
+    "4": "packets",
+    "5": "database",
+    "6": "records",
+    "7": "admin"
+  },
+  "edges": [
+    {
+      "subject": "server",
+      "predicate": "ROUTES",
+      "object": "traffic"
+    },
+    {
+      "subject": "firewall",
+      "predicate": "INSPECTS",
+      "object": "packets"
+    },
+    {
+      "subject": "database",
+      "predicate": "STORES",
+      "object": "records"
+    },
+    {
+      "subject": "database",
+      "predicate": "ENCRYPTS",
+      "object": "records"
+    },
+    {
+      "subject": "server",
+      "predicate": "CONTROLS",
+      "object": "firewall"
+    },
+    {
+      "subject": "firewall",
+      "predicate": "ACTIVATES",
+      "object": "database"
+    },
+    {
+      "subject": "database",
+      "predicate": "NOT_ROUTES",
+      "object": "traffic"
+    },
+    {
+      "subject": "admin",
+      "predicate": "OWNS",
+      "object": "server"
+    }
+  ],
+  "ai_response": "The server routes traffic.\nThe firewall routes traffic.\nThe database encrypts records.\nThe database routes traffic.\nThe server influences the database.\nThe server controls the database.\nThe quantum router encrypts records.\nThe admin owns the server.\nThe admin controls the firewall.\nThe firewall inspects packets.\nThe server activates the database.\n",
+  "claims": [
+    {
+      "id": 1,
+      "text": "The server routes traffic.",
+      "parsed": {
+        "subject": "server",
+        "predicate": "ROUTES",
+        "object": "traffic"
+      }
+    },
+    {
+      "id": 2,
+      "text": "The firewall routes traffic.",
+      "parsed": {
+        "subject": "firewall",
+        "predicate": "ROUTES",
+        "object": "traffic"
+      }
+    },
+    {
+      "id": 3,
+      "text": "The database encrypts records.",
+      "parsed": {
+        "subject": "database",
+        "predicate": "ENCRYPTS",
+        "object": "records"
+      }
+    },
+    {
+      "id": 4,
+      "text": "The database routes traffic.",
+      "parsed": {
+        "subject": "database",
+        "predicate": "ROUTES",
+        "object": "traffic"
+      }
+    },
+    {
+      "id": 5,
+      "text": "The server influences the database.",
+      "parsed": {
+        "subject": "server",
+        "predicate": "INFLUENCES",
+        "object": "database"
+      }
+    },
+    {
+      "id": 6,
+      "text": "The server controls the database.",
+      "parsed": {
+        "subject": "server",
+        "predicate": "CONTROLS",
+        "object": "database"
+      }
+    },
+    {
+      "id": 7,
+      "text": "The quantum router encrypts records.",
+      "parsed": {
+        "subject": "quantum router",
+        "predicate": "ENCRYPTS",
+        "object": "records"
+      }
+    },
+    {
+      "id": 8,
+      "text": "The admin owns the server.",
+      "parsed": {
+        "subject": "admin",
+        "predicate": "OWNS",
+        "object": "server"
+      }
+    },
+    {
+      "id": 9,
+      "text": "The admin controls the firewall.",
+      "parsed": {
+        "subject": "admin",
+        "predicate": "CONTROLS",
+        "object": "firewall"
+      }
+    },
+    {
+      "id": 10,
+      "text": "The firewall inspects packets.",
+      "parsed": {
+        "subject": "firewall",
+        "predicate": "INSPECTS",
+        "object": "packets"
+      }
+    },
+    {
+      "id": 11,
+      "text": "The server activates the database.",
+      "parsed": {
+        "subject": "server",
+        "predicate": "ACTIVATES",
+        "object": "database"
+      }
+    }
+  ],
+  "results": [
+    {
+      "verdict": "VERIFIED",
+      "is_hallucination": false,
+      "reason": "Exact predicate edge exists in the ground-truth graph.",
+      "proof_type": "direct_edge",
+      "path": [
+        "server",
+        "traffic"
+      ],
+      "direct_path_k1": 1,
+      "A1": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "total_reachability": 1
+    },
+    {
+      "verdict": "UNSUPPORTED",
+      "is_hallucination": null,
+      "reason": "Both entities exist, but the claimed predicate is not present or derivable under the declared rules.",
+      "proof_type": "no_proof",
+      "total_reachability": 0
+    },
+    {
+      "verdict": "VERIFIED",
+      "is_hallucination": false,
+      "reason": "Exact predicate edge exists in the ground-truth graph.",
+      "proof_type": "direct_edge",
+      "path": [
+        "database",
+        "records"
+      ],
+      "direct_path_k1": 1,
+      "A1": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "total_reachability": 1
+    },
+    {
+      "verdict": "CONTRADICTED",
+      "is_hallucination": true,
+      "reason": "The source contains an explicit contradictory relation.",
+      "proof_type": "explicit_contradiction"
+    },
+    {
+      "verdict": "VERIFIED",
+      "is_hallucination": false,
+      "reason": "Claim is derived by explicit rule CONTROLS AND ACTIVATES -> INFLUENCES.",
+      "proof_type": "rule_derivation",
+      "rule": "CONTROLS \u2227 ACTIVATES \u2192 INFLUENCES",
+      "A1": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "A2": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "composed_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "total_reachability": 1,
+      "path": [
+        "server",
+        "firewall",
+        "database"
+      ]
+    },
+    {
+      "verdict": "UNSUPPORTED",
+      "is_hallucination": null,
+      "reason": "Both entities exist, but the claimed predicate is not present or derivable under the declared rules.",
+      "proof_type": "no_proof",
+      "total_reachability": 0
+    },
+    {
+      "verdict": "UNRESOLVED",
+      "is_hallucination": null,
+      "reason": "Entity not found in the source knowledge graph.",
+      "missing_entities": [
+        "quantum router"
+      ],
+      "proof_type": "entity_resolution"
+    },
+    {
+      "verdict": "VERIFIED",
+      "is_hallucination": false,
+      "reason": "Exact predicate edge exists in the ground-truth graph.",
+      "proof_type": "direct_edge",
+      "path": [
+        "admin",
+        "server"
+      ],
+      "direct_path_k1": 1,
+      "A1": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "total_reachability": 1
+    },
+    {
+      "verdict": "UNSUPPORTED",
+      "is_hallucination": null,
+      "reason": "Both entities exist, but the claimed predicate is not present or derivable under the declared rules.",
+      "proof_type": "no_proof",
+      "total_reachability": 0
+    },
+    {
+      "verdict": "VERIFIED",
+      "is_hallucination": false,
+      "reason": "Exact predicate edge exists in the ground-truth graph.",
+      "proof_type": "direct_edge",
+      "path": [
+        "firewall",
+        "packets"
+      ],
+      "direct_path_k1": 1,
+      "A1": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "total_reachability": 1
+    },
+    {
+      "verdict": "UNSUPPORTED",
+      "is_hallucination": null,
+      "reason": "Both entities exist, but the claimed predicate is not present or derivable under the declared rules.",
+      "proof_type": "no_proof",
+      "total_reachability": 0
+    }
+  ],
+  "rules": {
+    "CONTROLS + ACTIVATES": "INFLUENCES"
+  }
+}

@@ -1,0 +1,8 @@
+The server routes traffic.
+The firewall inspects packets.
+The database stores records.
+The database encrypts records.
+The server controls the firewall.
+The firewall activates the database.
+The database does not route traffic.
+The admin owns the server.
